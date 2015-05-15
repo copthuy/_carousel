@@ -1,7 +1,7 @@
 # jSlider
 jSlider is an advanced jQuery Slider Plugin which help you to embed a full feature slider on your website within minutes. You will no longer need to write complicated scripts to make the slider run. Thing will now be easy via HTML properties & CSS.
 
-Why jSlider?
+#Why jSlider?
 - It's so simple!
 - It's super fast & smooth!
 - It's light weight. (Only 3.6KB - gzip & minimized)
