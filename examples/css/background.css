@@ -1,0 +1,63 @@
+#slider1 {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+#slider1 .slider-slides img {
+	width: 100%;
+	height: 100%;
+}
+
+.content {
+	width: 700px;
+	margin: 20px auto;
+	padding: 30px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.7);
+	box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.7);
+}
+
+.content a {
+}
+
+.bg1 {
+	background: url(../images/photo1.jpg) 50% 50% no-repeat;
+}
+.bg2 {
+	background: url(../images/photo2.jpg) 50% 50% no-repeat;
+}
+.bg3 {
+	background: url(../images/photo3.jpg) 50% 50% no-repeat;
+}
+.bg4 {
+	background: url(../images/photo4.jpg) 50% 50% no-repeat;
+}
+.bg5 {
+	background: url(../images/photo5.jpg) 50% 50% no-repeat;
+}
+.bg6 {
+	background: url(../images/photo6.jpg) 50% 50% no-repeat;
+}
+.bg1, .bg2, .bg3, .bg4, .bg5, .bg6 {
+	font-size: 0;
+	line-height: 0;
+	background-size: cover;
+}
+
+
+
+
+/* responsive rules */
+@media (max-width: 759px) {
+	.content {
+		width: auto;
+		margin: 0;
+	}
+}

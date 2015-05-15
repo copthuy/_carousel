@@ -1,0 +1,14 @@
+body {
+	font: 16px/20px 'Myriad Pro', Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #efefef;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+.content {
+	padding: 0 20px;
+	margin-bottom: 50px;
+}
