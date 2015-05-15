@@ -11,3 +11,6 @@ jSlider is an advanced jQuery Slider Plugin which help you to embed a full featu
 - Built in with 3 basic modes (slide, fade & gallery), it will fit most of your requirements.
 - jSlider has been tested carefully (via jsperf.com) to run at the top performance.
 - It has API functions which help you to interact with the slider easily.
+
+#Demos & Examples
+[Please visit here for demos & examples] (http://copthuy.github.io/jSlider/)
