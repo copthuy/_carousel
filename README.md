@@ -1,5 +1,5 @@
 # jSlider
-jSlider is an advanced jQuery Slider Plugin. It supports IE8+, Chrome, FireFox, Safari, Opera &amp; Touch devices. It's very lightweight &amp; easy to integrate into your website.
+jSlider is an advanced jQuery Slider Plugin which help you to embed a full feature slider on your website within minutes. You will no longer need to write complicated scripts to make the slider run. Thing will now be easy via HTML properties & CSS.
 
 Why jSlider?
 - It's so simple!
