@@ -1,5 +1,5 @@
 /*!
-* @SimpleSlider - a jQuery Plugin
+* @jSlider - a jQuery Plugin
 * @version 1.0.0
 *
 * @author Thuy Nguyen ducthuy@gmail.com
