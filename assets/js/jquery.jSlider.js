@@ -3,6 +3,8 @@
 * @version 1.0.0
 *
 * @author Thuy Nguyen ducthuy@gmail.com
+* @github http://github.com/copthuy/jSlider
+* MIT License
 * Copyright (c) 2015 Thuy Nguyen
 */
 
