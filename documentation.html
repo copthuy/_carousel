@@ -3,11 +3,18 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
 	<title>jSlider Documentation</title>
 	<style type="text/css">
-		p, table, hr, .box { margin-bottom:25px; }
+		p, table, hr, .box {margin-bottom:25px;}
 		.container {width: 800px; margin: auto;}
 		.center {text-align: center;}
-		.box p, .data-properties li { margin-bottom:10px; }
+		.box p, .data-properties li {margin-bottom:10px;}
 		.big {font-size: 2em; color: #000; padding-bottom: 50px;}
+		pre {color: blue;
+			white-space: pre-wrap;
+			white-space: -moz-pre-wrap;
+			white-space: -pre-wrap;
+			white-space: -o-pre-wrap;
+			word-wrap: break-word;
+		}
 	</style>
 </head>
 
@@ -37,17 +44,45 @@
 		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
 		<p>Basicly, you will need to include the CSS files &amp; JS files within a HEAD tag. I suggest you to use the latest jQuery. Download from <a href="http://jquery.com/" target="_blank">here</a>.<br />
 			You need to make sure <strong>"jSlider.css", "jQuery" &amp; "jquery.jSlider.js"</strong> are included &amp; loaded correctly. (For JS files, you are allowed to place them at the bottom of the page to keep the page rendering wihout being blocked.)
-			<img src="assets/images/head.png" alt="Head setup" /><br />
+			<pre>&lt;link rel="stylesheet" type="text/css" href="assets/css/jSlider.css" /&gt;
+&lt;script type="text/javascript" src="assets/js/jquery-latest.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/jquery.jSlider.js"&gt;&lt;/script&gt;</pre><br />
 			For responsive layout, you need to have "viewport" meta setup as in the screenshot above.
 		</p>
 		<p>This jSlider is generated using a DIV tag. You will need a wrapper which have the class name "jSlider". Then, inside the wrapper, each slide will be place in a sub DIV. Mostly, the content is image but you still can use other tags to display other things.<br />
-			<img src="assets/images/htmlstructure.png" alt="HTML Structure" /><br />
+			<pre>&lt;div id="slider1" class="jSlider" data-loop="true"&gt;
+	&lt;div&gt;&lt;img src="images/photo1.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo2.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;
+		&lt;img src="images/photo3.jpg" alt="" /&gt;
+		&lt;div class="sub-content-sample"&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href="http://jquery.com/" target="_blank"&gt;consectetur adipiscing elit&lt;/a&gt;, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo4.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo5.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo6.jpg" alt="" /&gt;&lt;/div&gt;
+&lt;/div&gt;</pre><br />
 			Do not specify slide image dimension (width &amp; height).</p>
 		<p class="big"><strong>Done! the slider is ready!</strong></p>
 
 		<p><strong>Animated content</strong></p>
 		<p>If you wish to have some nice &amp; simple animated content showed when a slide is active, please add some special classes to the elements as showed in the below screenshot. Remember to specify the <strong>position:absolute</strong> as well as <strong>top, left</strong> position of each "appear-*" element.<br />
-			<img src="assets/images/animated.png" alt="Animated classes" /></p>
+			<pre>&lt;div id="slider1" class="jSlider" data-delay="0"&gt;
+	&lt;div&gt;&lt;img src="images/photo1.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div class="selected"&gt;
+		&lt;h3 class="appear-top"&gt;This is the slide title!&lt;/h3&gt;
+		&lt;h4 class="appear-right"&gt;This can be moved after the slide is showed...&lt;/h4&gt;
+		&lt;p  class="appear-left"&gt;...in different directions...&lt;/p&gt;
+		&lt;p  class="appear-bottom"&gt;...and with different animation effects&lt;/p&gt;
+		&lt;h5 class="appear-fade"&gt;powered by jSlider!&lt;/h5&gt;
+		&lt;img src="images/photo2.jpg" alt="" /&gt;
+	&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo3.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo4.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo5.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo6.jpg" alt="" /&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></p>
 
 		<h4 id="DATAProperties"><strong>Customization by using DATA Properties</strong></h4>
 		<p>This jSlider options are managed using "data-*" properties. You can add them to the wrapper as below:</p>
