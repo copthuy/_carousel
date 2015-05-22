@@ -12,3 +12,12 @@ h1, h2, h3, h4, h5, h6, p {
 	padding: 0 20px;
 	margin-bottom: 50px;
 }
+.share {
+	padding: 10px 0;
+}
+
+.share > div, .share > a {
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
