@@ -36,7 +36,9 @@
 		, stopEvent = isTouchDevice ? (isPointer ? (isPointerIE10 ? 'MSPointerUp' : 'pointerup') : 'touchend') : 'mouseup'
 		, enterEvent = isTouchDevice ? null : 'mouseenter'
 		, leaveEvent = isTouchDevice ? null : 'mouseleave'
-		, cancelEvent = isTouchDevice ? (isPointer ? (isPointerIE10 ? 'MSPointerCancel' : 'pointercancel') : 'touchcancel') : null
+		, cancelEvent = isTouchDevice ? (isPointer ? (isPointerIE10 ? 'MSPointerCancel' : 'pointercancel') : 'touchcancel') : null;
+
+	var cssEndTransition = 'transitionend webkitTransitionEnd oTransitionEnd msTransitionEnd';
 
 	var sliderMap = []
 		, isTouching = false
@@ -159,7 +161,7 @@
 				if (!this.hasClass('event-attached')) {
 					this
 						.addClass('event-attached')
-						.on('transitionend webkitTransitionEnd oTransitionEnd msTransitionEnd', function(evt) {
+						.on(cssEndTransition, function(evt) {
 							var $this = $(evt.target);
 							if ($this.hasClass('slider-slides')) {
 								$this.getSlider().slideComplete();
@@ -198,8 +200,12 @@
 				if (!this.hasClass('event-attached')) {
 					this
 						.addClass('event-attached')
-						.on('transitionend webkitTransitionEnd oTransitionEnd msTransitionEnd', function() {
-							$(this).getSlider().slideComplete();
+						.on(cssEndTransition, function(evt) {
+							if (evt.originalEvent.propertyName.indexOf('opacity') != -1 
+								&& $(this).css('z-index') != 0) {
+								
+								$(this).getSlider().slideComplete();
+							}
 						});
 				}
 			
