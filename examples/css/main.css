@@ -28,3 +28,11 @@ h1, h2, h3, h4, h5, h6, p {
 	display: inline-block;
 	vertical-align: top;
 }
+
+.banner {
+	text-align: center;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	width: auto;
+	overflow: hidden;
+}
