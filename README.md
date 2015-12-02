@@ -5,7 +5,7 @@ jSlider is an advanced jQuery Slider Plugin which help you to embed a full featu
 - It's so simple!
 - It's super fast & smooth!
 - It's light weight. (Only 3.6KB - gzip & minimized)
-- It supports most major browsers (IE8+, FireFox, Chrome, ...)
+- It supports most major browsers (IE8+, FireFox, Chrome, Microsoft Edge...)
 - It supports touch mobile devices (iOS, Android & Windows Phone) & mouse drag interaction.
 - It supports animated content. (5 different animations)
 - Built in with 3 basic modes (slide, fade & gallery), it will fit most of your requirements.
