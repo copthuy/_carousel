@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>jSlider Documentation</title>
+	<style type="text/css">
+		p, table, hr, .box {margin-bottom:25px;}
+		.container {width: 800px; margin: auto;}
+		.center {text-align: center;}
+		.box p, .data-properties li {margin-bottom:10px;}
+		.big {font-size: 2em; color: #000; padding-bottom: 50px;}
+		pre {color: blue;
+			white-space: pre-wrap;
+			white-space: -moz-pre-wrap;
+			white-space: -pre-wrap;
+			white-space: -o-pre-wrap;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+		<h1 class="center">&ldquo;jSlider&rdquo;</h1>
+		<p>
+			<strong>
+			Created: 4/16/2015<br>
+			By: Thuy Nguyen<br>
+			Email: <a href="mailto:ducthuy@gmail.com">ducthuy@gmail.com</a>
+			</strong>
+		</p>
+		
+		<hr>
+		
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="float:right;">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+			">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+
+		<h2 id="toc">Table of Contents</h2>
+		<ol>
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+		</ol>
+
+		<hr>
+		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>Basicly, you will need to include the CSS files &amp; JS files within a HEAD tag. I suggest you to use the latest jQuery. Download from <a href="http://jquery.com/" target="_blank">here</a>.<br />
+			You need to make sure <strong>"jSlider.css", "jQuery" &amp; "jquery.jSlider.js"</strong> are included &amp; loaded correctly. (For JS files, you are allowed to place them at the bottom of the page to keep the page rendering wihout being blocked.)
+			<pre>&lt;link rel="stylesheet" type="text/css" href="assets/css/jSlider.css" /&gt;
+&lt;script type="text/javascript" src="assets/js/jquery-latest.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="assets/js/jquery.jSlider.js"&gt;&lt;/script&gt;</pre><br />
+			For responsive layout, you need to have "viewport" meta setup as in the screenshot above.
+		</p>
+		<p>This jSlider is generated using a DIV tag. You will need a wrapper which have the class name "jSlider". Then, inside the wrapper, each slide will be place in a sub DIV. Mostly, the content is image but you still can use other tags to display other things.<br />
+			<pre>&lt;div id="slider1" class="jSlider" data-loop="true"&gt;
+	&lt;div&gt;&lt;img src="images/photo1.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo2.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;
+		&lt;img src="images/photo3.jpg" alt="" /&gt;
+		&lt;div class="sub-content-sample"&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href="http://jquery.com/" target="_blank"&gt;consectetur adipiscing elit&lt;/a&gt;, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo4.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo5.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo6.jpg" alt="" /&gt;&lt;/div&gt;
+&lt;/div&gt;</pre><br />
+			Do not specify slide image dimension (width &amp; height).</p>
+		<p class="big"><strong>Done! the slider is ready!</strong></p>
+
+		<p><strong>Animated content</strong></p>
+		<p>If you wish to have some nice &amp; simple animated content showed when a slide is active, please add some special classes to the elements as showed in the below screenshot. Remember to specify the <strong>position:absolute</strong> as well as <strong>top, left</strong> position of each "appear-*" element.<br />
+			<pre>&lt;div id="slider1" class="jSlider" data-delay="0"&gt;
+	&lt;div&gt;&lt;img src="images/photo1.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div class="selected"&gt;
+		&lt;h3 class="appear-top"&gt;This is the slide title!&lt;/h3&gt;
+		&lt;h4 class="appear-right"&gt;This can be moved after the slide is showed...&lt;/h4&gt;
+		&lt;p  class="appear-left"&gt;...in different directions...&lt;/p&gt;
+		&lt;p  class="appear-bottom"&gt;...and with different animation effects&lt;/p&gt;
+		&lt;h5 class="appear-fade"&gt;powered by jSlider!&lt;/h5&gt;
+		&lt;img src="images/photo2.jpg" alt="" /&gt;
+	&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo3.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo4.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo5.jpg" alt="" /&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;img src="images/photo6.jpg" alt="" /&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></p>
+
+		<h4 id="DATAProperties"><strong>Customization by using DATA Properties</strong></h4>
+		<p>This jSlider options are managed using "data-*" properties. You can add them to the wrapper as below:</p>
+		<pre>&lt;div id="slider1" <strong>class="jSlider" data-navigation="always" data-indicator="none"</strong>&gt;</pre>
+		<p>Here is the document about "data-*" options:</p>
+		<ul class="data-properties">
+			<li><strong>data-navigation</strong>: this manages the display of previous / next buttons.<br />
+				This can be set to "always", "none" or "hover". <br />
+				"hover" is set by default which means the buttons will appear when users move their mouse hover the slider.<br />
+				<em>On mobile, "hover" is equal to "none"</em>.</li>
+			
+			<li><strong>data-indicator</strong>: this manages the display of pagination buttons at the bottom of the slider.<br />
+				This can be set to "always", "none" or "hover". <br />
+				"always" is set by default.<br />
+				<em>On mobile, "hover" is equal to "none"</em>.</li>
+			
+			<li><strong>data-speed</strong>: this manages transition speed of the slider in milliseconds.<br />
+				The default value is "500".</li>
+
+			<li><strong>data-delay</strong>: this manages autoplay delay time between each transition of the slider in milliseconds.<br />
+				The default value is "5000". (5 seconds)<br />
+				If you do not want the autoplay, set it to "0" (zero)</li>
+
+			<li><strong>data-transition</strong>: this manages transition type of the slider.<br />
+				This can be set to "slide" or "fade". <br />
+				"slide" is set by default.</li>
+
+			<li><strong>data-loop</strong>: this manages slide loop. If set to "true", when the slider reach to the end the next slide will be first slide. Vice versa.<br />
+				This can be set to "true" or "false". <br />
+				"false" is set by default.<br />
+				<em>"true" is best use for fade effect &amp; in background mode.</em></li>
+
+			<li><strong>data-group</strong>: this manages slide group. You will define the group of elements in each slide. This is a specialize property for gallery mode. In "fade" transition, the value is always "1".<br />
+				The default value is "1".</li>
+		</ul>
+
+		<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>Normally, the CSS of jSlider is just fine. You will not need to modify it except the slider dimension (width &amp; height), the display of the buttons (previous / next buttons &amp; pagination buttons.)</p>
+
+		<p><strong>You are recommended not to modify the "jSlider.css" file which is the main core CSS file of jSlider. It contains many important CSS rules.</strong></p>
+
+		<p>To specify the slider dimension &amp; modify the previous / next buttons as well as the pagination buttons at the bottom of the slider, I suggest you to use another CSS file &amp; override the CSS rules.</p>
+
+		<p><strong>Slider dimension</strong><br />
+			The slider width &amp; height are managed by using CSS rule. You can use reponsive rules to resize the slider width &amp; height for each screen size.<br />
+			Auto height: You can the slider height to AUTO. The slider height will automatically set to the height of the first image in the first slide.
+		</p>
+
+		<hr>
+		
+		<h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Acctually, you don't need to do Javascript code except you have to generate the slider from Ajax content or you have to force the slider to move to the specific slide.<br />
+			Below is the list of API functions:</p>
+
+		<p><strong>Methods:</strong></p>
+		<ul class="data-properties">
+			<li><strong>sliderInit</strong>: generate a new slider. Remember that, you should not have class "jSlider" in the wrapper. You can specify the slider options in the function *.
+				<pre>$('#sliderId').sliderInit(<em>{settings}</em>);</pre>
+			</li>
+
+			<li><strong>sliderStop</strong>: cancel autoplay
+				<pre>$('#sliderId').sliderStop();</pre>
+			</li>
+
+			<li><strong>sliderGo</strong>: go to next or previous slide.
+				<pre>$('#sliderId').sliderStop(direction);</pre>
+				You must specify the <strong>direction</strong> value (1 or -1): go forward 1, go backward -1.
+			</li>
+
+			<li><strong>sliderUpdate</strong>: go to a specific slide
+				<pre>$('#sliderId').sliderUpdate(index);</pre>
+				You must specify the slide <strong>index</strong>. The first slide index is "0" (zero).
+			</li>
+		</ul>
+		<p>*About <em>settings</em>: {settings} is an object value which is the same as "data-*" properties mentioned earlier in the <a href="#DATAProperties">DATA Properties</a>. Below is the default settings.
+		<pre>{
+    'navigation':   'hover'       /* hover | always | none */
+    , 'indicator':  'always'      /* hover | always | none */
+    , 'speed':       500
+    , 'delay':       5000
+    , 'transition': 'slide'       /* slide | fade */
+    , 'loop':        false        /* false | true */
+    , 'group':       1
+}</pre>
+		</p>
+		
+		<p><strong>Events:</strong></p>
+		<ul class="data-properties">
+			<li><strong>slideCreated</strong>: this event is fired when the slider is created.
+				<pre>$('#sliderId').on('slideCreated', function(evt) {
+    /* do something */
+});</pre>
+			</li>
+
+			<li><strong>slideStart</strong>: this event is fired when the slider begin a transition.
+				<pre>$('#sliderId').on('slideStart', function(evt) {
+    /* do something */
+});</pre>
+			</li>
+
+			<li><strong>slideComplete</strong>: this event is fired when the slider finish a transition. You can access the current slide index in event value.
+				<pre>$('#sliderId').on('slideComplete', function(evt) {
+    alert(evt.current);    /* return the current slide index */
+});</pre>
+			</li>
+
+			<li><strong>slideCancelAutoPlay</strong>: this event is fired when the autoplay is canceled.
+				<pre>$('#sliderId').on('slideCancelAutoPlay', function(evt) {
+    /* do something */
+});</pre>
+			</li>
+		</ul>
+		
+		<hr>
+		
+		<h5>Thuy Nguyen</h5>
+	</div>
+</body>
+</html>
