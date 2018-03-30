@@ -13,7 +13,6 @@ jSlider is an advanced jQuery Slider Plugin which help you to embed a full featu
 - It has API functions which help you to interact with the slider easily.
 
 # Demos & Examples
-[Please visit here for demos & examples] (http://tabsub.com/scripts/jslider/)
 
 # Change Log
 - v1.0.0 - The first release.
