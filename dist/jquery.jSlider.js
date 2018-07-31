@@ -1,6 +1,6 @@
 /*!
 * @jSlider - a jQuery Plugin
-* @version 1.0.0
+* @version 1.0.1
 *
 * @author Thuy Nguyen ducthuy@gmail.com
 * @website http://startjs.com/
@@ -13,7 +13,7 @@
 	if (typeof define === 'function'
 		&& define.amd
 		&& define.amd.jQuery) {
-		
+
 		// AMD. Register as anonymous module.
         define(['jquery'], factory);
 
@@ -65,32 +65,24 @@
 						|| css.OTransition !== undefined);
 
 	/* common functions */
-	function getX(evt) {
+	function getXY(evt, val) {
 		var event = evt.originalEvent ? evt.originalEvent : evt;
 
-		if (isTouch && event.touches !== undefined && event.touches.length == 1) {
-			return event.touches[0].pageX;
-		} else if (evt.pageX !== undefined) {
-			return evt.pageX;
-		} else if (event.pageX !== undefined) {
-			return event.pageX;
-		}
-		
-		return 0;
+		return isTouch && event.touches !== undefined && event.touches.length == 1
+			? event.touches[0][val]
+			: evt[val] !== undefined
+				? evt[val]
+				: event[val] !== undefined
+					? event[val]
+					: 0;
+	}
+
+	function getX(evt) {
+		return getXY(evt, 'pageX');
 	}
 
 	function getY(evt) {
-		var event = evt.originalEvent ? evt.originalEvent : evt;
-
-		if (isTouch && event.touches !== undefined && event.touches.length == 1) {
-			return event.touches[0].pageY;
-		} else if (evt.pageY !== undefined) {
-			return evt.pageY;
-		} else if (event.pageY !== undefined) {
-			return event.pageY;
-		}
-		
-		return 0;
+		return getXY(evt, 'pageY');
 	}
 
 	/* lib extension */
@@ -101,7 +93,7 @@
 				var timing = time !== 0 ? 'cubic-bezier(0.39, 0.575, 0.565, 1)' : 'linear'
 					, duration = time + 's'
 					, property = time !== 0 ? 'all' : 'none';
-				
+
 				this.css({
 					'-webkit-transition-property': property
 					, '-moz-transition-property': property
@@ -114,7 +106,7 @@
 					, '-ms-transition-duration': duration
 					, '-o-transition-duration': duration
 					, 'transition-duration': duration
-					
+
 					, '-webkit-transition-timing-function': timing
 					, '-moz-transition-timing-function': timing
 					, '-ms-transition-timing-function': timing
@@ -143,7 +135,7 @@
 					, '-o-transform': 'translateX(' + val + surfix + ')'
 					, 'transform': 'translateX(' + val + surfix + ')'
 				});
-			
+
 			} else {
 				this.css({
 					'margin-left': val
@@ -170,7 +162,7 @@
 							}
 						});
 				}
-			
+
 			} else {
 				this
 					.stop(true, true)
@@ -202,14 +194,14 @@
 					this
 						.addClass('event-attached')
 						.on(cssEndTransition, function(evt) {
-							if (evt.originalEvent.propertyName.indexOf('opacity') != -1 
+							if (evt.originalEvent.propertyName.indexOf('opacity') != -1
 								&& $(this).css('z-index') != 0) {
-								
+
 								$(this).getSlider().slideComplete();
 							}
 						});
 				}
-			
+
 			} else {
 				this
 					.stop(true, true)
@@ -226,7 +218,7 @@
 
 	/* extend slider to DOM object */
 	$.fn.extend({
-		
+
 		/* setup slider */
 		'sliderInit': function(options) {
 
@@ -263,7 +255,7 @@
 
 			/* extend settings */
 			var settings = $.extend({}, defaults, html_data, options);
-			
+
 			/* fixes */
 			if (isNaN(settings.speed)
 				|| settings.speed < 0) {
@@ -292,8 +284,8 @@
 				}
 			}
 			total = Math.ceil(total / settings.group);
-			
-			
+
+
 			/* save settings */
 			this.data('settings', settings);
 
@@ -302,7 +294,7 @@
 			/* ------------------------------------------------------------------------------------------*/
 			var current = 0
 				, selected = '> div.selected';
-			
+
 			/* hash tag is in top priority */
 			if (window.location.hash != '') {
 				selected = window.location.hash + ',' + selected
@@ -311,7 +303,7 @@
 			/* if found selected item, store the index & update class */
 			if (this.find(selected).length != 0) {
 				current = Math.ceil(this.find(selected).index() / settings.group);
-				
+
 				/* update class */
 				this.find('> div.selected').removeClass('selected');
 				this.find('> div:eq(' + current + ')').addClass('selected');
@@ -347,7 +339,7 @@
 				}
 			});
 
-			
+
 			/* SETUP DATA */
 			/* ------------------------------------------------------------------------------------------*/
 			this.data('total', total)
@@ -390,7 +382,7 @@
 				this.addClass('background-transition');
 			}
 
-			
+
 			/* BINDING EVENTS */
 			/* ------------------------------------------------------------------------------------------*/
 			if (settings.navigation != 'none' || settings.indicator != 'none') {
@@ -400,7 +392,7 @@
 
 					if (!isTouchDevice) {
 						evt.preventDefault();
-						
+
 						/* change cursor */
 						$slides.addClass('grabbing');
 					}
@@ -429,7 +421,7 @@
 					if (isTouching != true) {
 						return;
 					}
-					
+
 
 					/* if on desktop, cancel other events */
 					if (!isTouchDevice) {
@@ -447,7 +439,7 @@
 						}
 						return;
 					}
-					
+
 					/* if this is swipe & drag, set swipe on and recalculate the slider-slides */
 					isSwiping = true;
 					evt.preventDefault();
@@ -464,7 +456,7 @@
 						, current = $slider.data('current')
 						, w = $slider.width()
 						, dir = 1;
-					
+
 					/* change cursor */
 					$slides.removeClass('grabbing');
 
@@ -495,7 +487,7 @@
 						}
 					}
 				});
-				
+
 				/* SHOW NAV / INDICATOR */
 				/* ------------------------------------------------------------------------------------------*/
 				if (enterEvent != null && leaveEvent != null) {
@@ -521,7 +513,7 @@
 					});
 				}
 			}
-			
+
 
 			/* ADD CONTROLLER */
 			/* ------------------------------------------------------------------------------------------*/
@@ -549,7 +541,7 @@
 						.sliderStop()
 						.sliderGo($(this).data('direction'));
 				});
-			
+
 
 			/* indicator */
 			if (settings.indicator == 'always') {
@@ -604,7 +596,7 @@
 				, total = this.data('total')
 				, stop = this.data('cancel-play')
 				, isLoaded = this.data('imageLoaded') == this.data('totalImages');
-			
+
 			if (current >= total - 1) {
 				this.sliderStop();
 				return;
@@ -654,7 +646,7 @@
 				, $elems = this.find('.slider-slides > div');
 
 			if (settings.transition == 'slide') {
-				return this.sliderShowItems();		
+				return this.sliderShowItems();
 			}
 
 			/* hide un-use slide */
@@ -676,7 +668,7 @@
 					});
 				}
 			}
-			
+
 			return this.sliderShowItems();
 		}
 
@@ -691,7 +683,7 @@
 
 			return this;
 		}
-		
+
 		/* update slider dimension */
 		, 'sliderResized': function() {
 			var i
@@ -700,7 +692,7 @@
 				, current = this.data('current')
 				, w = this.width()
 				, $elems = this.find('.slider-slides > div');
-			
+
 			/* update elements */
 			for (i = 0; i < $elems.length; i++) {
 				if (settings.transition == 'slide') {
@@ -712,7 +704,7 @@
 					}
 				}
 			}
-			
+
 			/* update container & slider-slides */
 			if (settings.transition == 'slide') {
 				this.find('.slider-slides')
@@ -795,7 +787,7 @@
 				, current = $slider.data('current')
 				, index =  $slider.data('map-index')
 				, $elems = $slider.find('.slider-slides > div:eq(' + current + ') [class*=appear-]')
-				, showIndex = 0; 
+				, showIndex = 0;
 
 			$slider.sliderHideItems();
 			clearInterval(sliderMap[index]['showInterval']);
@@ -863,7 +855,7 @@
 			return this.parents('.jSlider');
 		}
 	});
-	
+
 	/* startup functions */
 	$(document).ready(function(evt) {
 		$('body .jSlider').each(function() {
@@ -878,4 +870,3 @@
 	});
 
 });
-

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jSlider</title>
+		<meta name="description" content="jSlider JS example">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="robots" content="index, follow">
+		<meta name="revisit-after" content="7 days">
+		<meta name="theme-color" content="#225aa5">
+		<meta name="theme-color" content="#66cc00">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+		<link rel="stylesheet" href="dist/jSlider.css">
+		<style type="text/css">
+			body {
+				font: normal normal 300 16px/24px 'Open Sans', sans-serif;
+				margin: 0;
+				padding: 0;
+				color: #bbb;
+				background: #232526;
+				background: -moz-radial-gradient(center, ellipse cover,  #232526 0%, #232526 100%);
+				background: -webkit-radial-gradient(center, ellipse cover,  #232526 0%,#232526 100%);
+				background: radial-gradient(ellipse at center,  #232526 0%,#232526 100%);
+			}
+			div {
+				box-sizing: border-box;
+			}
+			h1, h2, h3, h4, h5, h6, p {
+				margin: 0 0 2rem 0;
+				padding: 0;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: 400;
+				color: #fff;
+			}
+			ul {
+				margin-bottom: 2rem;
+			}
+			a {
+				color: #cddc39;
+				text-decoration: none;
+				transition: all .325s;
+			}
+			a:hover {
+				color: #000;
+				background: #cddc39;
+			}
+			strong {
+				font-weight: 400;
+			}
+			.content {
+				width: 700px;
+				padding: 50px;
+				margin: auto;
+			}
+			@media (max-width: 713px) {
+				.content {
+					width: 100%;
+				}
+			}
+			
+		</style>
+		<style type="text/css">
+			#slider1 {
+				width: 700px;
+				height: 125px;
+				margin: 50px auto;
+			}		
+			#slider1 .slider-slides img {
+				width: 100%;
+				height: auto;
+			}
+			#slider1 .navigator span {
+				background: none;
+			}
+			#slider1 .navigator .prev {
+				left: -5px;
+			}
+			#slider1 .navigator .next {
+				right: -5px;
+			}
+			
+			/* responsive rules */
+			@media (max-width: 759px) {
+				#slider1 {
+					width: 100%;
+					height: 60px;
+					margin: 0;
+					overflow: hidden;
+				}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="jSlider" id="slider1" data-group="3" data-indicator="none" data-navigation="always">
+			<div><img src="images/photo2_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo3_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo4_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo5_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo6_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo1_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo2_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo3_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo4_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo5_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo6_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo1_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo2_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo3_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo4_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo5_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo6_s.jpg" alt="sample photo"></div>
+			<div><img src="images/photo1_s.jpg" alt="sample photo"></div>
+		</div>
+		<div class="content">
+			<h3>More demos / examples of jSlider:</h3>
+			<ul>
+				<li><a href="index.html">Welcome slider</a></li>
+				<li><a href="edge_to_edge.html">Edge to Edge (Full Width) slider</a></li>
+				<li><a href="background.html">Background slider</a></li>
+				<li><a href="gallery.html">Gallery slider</a></li>
+				<li><a href="animated.html">Slider with animated content (with custom active slide)</a></li>
+				<li><a href="multiple.html">Multiple sliders</a></li>
+				<li><a href="interaction.html">Slider interaction</a></li>
+				<li><a href="activate.html">Use Javascript to create slider</a></li>
+			</ul>
+			<h3>Copyright notice.</h3>
+			<p><strong>
+					jSlider is released under MIT license.</strong></p>
+			<p>All the photos of the <strong>jSlider </strong>demos / examples are copyrighted to the author of <strong>jSlider. </strong>You are not permit to use them anywhere else.</p>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="dist/jquery.jSlider.min.js"></script>
+	</body>
+</html>

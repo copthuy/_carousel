@@ -1,0 +1,41 @@
+extends inc/main.pug
+block variables
+
+block css
+	style(type="text/css").
+		#slider1 {
+			width: 700px;
+			height: 125px;
+			margin: 50px auto;
+		}		
+		#slider1 .slider-slides img {
+			width: 100%;
+			height: auto;
+		}
+		#slider1 .navigator span {
+			background: none;
+		}
+		#slider1 .navigator .prev {
+			left: -5px;
+		}
+		#slider1 .navigator .next {
+			right: -5px;
+		}
+		
+		/* responsive rules */
+		@media (max-width: 759px) {
+			#slider1 {
+				width: 100%;
+				height: 60px;
+				margin: 0;
+				overflow: hidden;
+			}
+		}
+
+		
+block content
+	#slider1.jSlider(data-group="3" data-indicator="none" data-navigation="always")
+		- var val = 0
+		while val++ < 18
+			div: img(src="images/photo"+(val%6+1)+"_s.jpg" alt="sample photo")
+			

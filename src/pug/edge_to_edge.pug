@@ -1,0 +1,70 @@
+extends inc/main.pug
+block variables
+
+block css
+	style(type="text/css").
+		#slider1 {
+			width: 100%;
+			max-height: 700px;
+			margin-bottom: 75px;
+		}
+		.sub-content-sample {
+			font-size: 30px;
+			line-height: 1.25;
+			padding: 20px 40px;
+			width: 50%;
+			min-width: 200px;
+			max-width: 500px;
+			color: #fff;
+			background: #000;
+			background: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+		.sub-content-sample p {
+			margin: 0;
+			padding: 0;
+		}
+		.sub-content-sample a {
+			color: #fff;
+			font-weight: bold;
+		}
+		
+		/* responsive rules */
+		@media (max-width: 1199px) {
+			.sub-content-sample {
+				font-size: 20px;
+			}
+		}
+		@media (max-width: 991px) {
+		}
+		@media (max-width: 767px) {
+			.sub-content-sample {
+				font-size: 12px;
+				padding: 10px;
+			}
+		}
+		@media (max-width: 480px) {
+			.sub-content-sample {
+				font-size: 10px;
+			}
+		}
+		@media (max-width: 384px) {
+			.sub-content-sample {
+				font-size: 10px;
+			}
+		}
+
+		
+block content
+	#slider1.jSlider(data-loop="true")
+		- var val = 0
+		while val++ < 6
+			div
+				img(src="images/photo"+val+".jpg" alt="sample photo")
+				if val == 2
+					.sub-content-sample: p Lorem ipsum dolor sit amet, 
+						a(href="http://jquery.com/" target="_blank") consectetur adipiscing elit
+						|, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		

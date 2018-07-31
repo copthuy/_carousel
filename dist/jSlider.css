@@ -8,6 +8,10 @@ SLIDER CORE!!! DO NOT MODIFY!!!
 	height: auto;
 }
 
+.jSlider div, .jSlider span {
+	box-sizing: border-box !important;
+}
+
 .jSlider img {
 	width: 100%;
 	height: auto;
@@ -45,7 +49,6 @@ SLIDER CORE!!! DO NOT MODIFY!!!
 .jSlider .slider-content-wrapper {
 	width: 100%;
 	height: 100%;
-	padding-bottom: 201px; /* fix windows phone tap highlight */
 	overflow: hidden;
 }
 
@@ -143,9 +146,8 @@ CONTROLLERS - PURE CSS 3 THEME
 	width: 11px;
 	height: 11px;
 	margin-left: 10px;
-	background: #ccc;
-	background: rgba(255, 255, 255, 0.5);
-	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.7);
 	border-radius: 50px;
 	-webkit-border-radius: 50px;
 	display: inline-block;
@@ -155,7 +157,7 @@ CONTROLLERS - PURE CSS 3 THEME
 	margin-left: 0;
 }
 .jSlider .indicator span.selected {
-	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
 }
 
 .jSlider .navigator {
@@ -167,9 +169,8 @@ CONTROLLERS - PURE CSS 3 THEME
 	width: 50px;
 	height: 50px;
 	margin-top: -25px;
-	background: #fff;
 	background: rgba(255, 255, 255, 0.5);
-	border-radius: 50px;
+	border-radius: 50%;
 	-webkit-border-radius: 50px;
 	-ms-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
@@ -183,7 +184,6 @@ CONTROLLERS - PURE CSS 3 THEME
 	visibility: visible;
 }
 .jSlider .navigator span:hover {
-	background: #000;
 	background: rgba(0, 0, 0, 0.5);
 }
 .jSlider .navigator .disabled {
@@ -205,18 +205,18 @@ CONTROLLERS - PURE CSS 3 THEME
 .jSlider .navigator span:before {
 	width: 20px;
 	height: 0;
-	border-top: 1px solid #000;
+	border-top: 1px solid rgba(0, 0, 0, .35);
 }
 .jSlider .navigator span:hover:before {
-	border-top-color: #fff;
+	border-top-color: rgba(255, 255, 255, .35);
 }
 .jSlider .navigator span:after {
 	height: 20px;
 	width: 0;
-	border-left: 1px solid #000;
+	border-left: 1px solid rgba(0, 0, 0, .35);
 }
 .jSlider .navigator span:hover:after {
-	border-left-color: #fff;
+	border-left-color: rgba(255, 255, 255, .35);
 }
 .jSlider .navigator .prev:before
 , .jSlider .navigator .prev:after {

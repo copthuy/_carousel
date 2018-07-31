@@ -1,0 +1,150 @@
+//- start top variable block
+block variables
+
+//- custom title and meta tags
+if custom_title
+	- var title = custom_title;
+else
+	- var title = "jSlider";
+
+if custom_meta
+	- var meta = custom_meta;
+else
+	- var meta = "jSlider JS example";
+
+
+//- start main layout
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title= title
+		meta(name="description" content=meta)
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="robots" content="index, follow")
+		meta(name="revisit-after" content="7 days")
+		meta(name="theme-color" content="#225aa5")
+		//- 
+			favicons
+			- var favicon = "images/favicon/";
+			each val in [57, 66, 72, 76, 114, 120, 144, 152, 180]
+				link(rel="apple-touch-icon" sizes=val+"x"+val href=favicon+"apple-icon-"+val+"x"+val+".png")
+			each val in [16, 32, 96]
+				link(rel="icon" type="image/png" sizes=val+"x"+val href=favicon+"favicon-"+val+"x"+val+".png")
+			link(rel="icon" type="image/png" sizes="192x192" href=favicon+"android-icon-192x192.png")
+			link(rel="manifest" href=favicon+"manifest.json")
+			meta(name="msapplication-TileColor" content="#66cc00")
+			meta(name="msapplication-TileImage" content=favicon+"ms-icon-144x144.png")
+		meta(name="theme-color" content="#66cc00")
+		//- css include
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700")
+		link(rel="stylesheet" href="dist/jSlider.css")
+		style(type="text/css").
+			body {
+				font: normal normal 300 16px/24px 'Open Sans', sans-serif;
+				margin: 0;
+				padding: 0;
+				color: #bbb;
+				background: #232526;
+				background: -moz-radial-gradient(center, ellipse cover,  #232526 0%, #232526 100%);
+				background: -webkit-radial-gradient(center, ellipse cover,  #232526 0%,#232526 100%);
+				background: radial-gradient(ellipse at center,  #232526 0%,#232526 100%);
+			}
+			div {
+				box-sizing: border-box;
+			}
+			h1, h2, h3, h4, h5, h6, p {
+				margin: 0 0 2rem 0;
+				padding: 0;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: 400;
+				color: #fff;
+			}
+			ul {
+				margin-bottom: 2rem;
+			}
+			a {
+				color: #cddc39;
+				text-decoration: none;
+				transition: all .325s;
+			}
+			a:hover {
+				color: #000;
+				background: #cddc39;
+			}
+			strong {
+				font-weight: 400;
+			}
+			.content {
+				width: 700px;
+				padding: 50px;
+				margin: auto;
+			}
+			@media (max-width: 713px) {
+				.content {
+					width: 100%;
+				}
+			}
+			
+		block css
+
+		//- ga tracking
+			script.
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-71075931-1', 'auto');
+				ga('send', 'pageview');
+	//- start body
+	body
+		//- main section
+		block content
+		if home
+			.content
+				h2 Welcome to jSlider!
+				p
+					strong jSlider 
+					| is an advanced jQuery Slider Plugin which help you to embed a full feature slider on your website within minutes. You will no longer need to write complicated scripts to make the slider run. Thing will now be easy via HTML properties &amp; CSS.
+					
+				h3 Why jSlider?
+				ul
+					li It's so 
+						strong simple!
+					li It's super 
+						strong fast &amp; smooth!
+					li It's light weight. (Only 3.6KB - gzip &amp; minimized)
+					li It supports 
+						strong most major browsers (IE8+, FireFox, Chrome, Edge ...)
+					li It supports 
+						strong touch mobile devices (iOS, Android &amp; Windows Phone) &amp; mouse drag interaction.
+					li It supports 
+						strong animated content
+						|. (5 different animations)
+		.content
+			h3 More demos / examples of jSlider:
+			ul
+				li: a(href="index.html") Welcome slider
+				li: a(href="edge_to_edge.html") Edge to Edge (Full Width) slider
+				li: a(href="background.html") Background slider
+				li: a(href="gallery.html") Gallery slider
+				li: a(href="animated.html") Slider with animated content (with custom active slide)
+				li: a(href="multiple.html") Multiple sliders
+				li: a(href="interaction.html") Slider interaction
+				li: a(href="activate.html") Use Javascript to create slider
+			
+			h3 Copyright notice.
+			p: strong jSlider 
+				| is released under MIT license.
+			p All the photos of the 
+				strong jSlider 
+				| demos / examples are copyrighted to the author of 
+				strong jSlider. 
+				| You are not permit to use them anywhere else.
+		
+		//- bootstrap scripts
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous")
+		script(src="dist/jquery.jSlider.min.js")
+		block bottom-script
