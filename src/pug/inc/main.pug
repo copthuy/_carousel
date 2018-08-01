@@ -39,7 +39,7 @@ html(lang="en")
 		meta(name="theme-color" content="#66cc00")
 		//- css include
 		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700")
-		link(rel="stylesheet" href="dist/jSlider.css")
+		link(rel="stylesheet" href="jSlider.min.css")
 		style(type="text/css").
 			body {
 				font: normal normal 300 16px/24px 'Open Sans', sans-serif;
@@ -77,12 +77,31 @@ html(lang="en")
 			strong {
 				font-weight: 400;
 			}
+			.top {
+				width: 714px;
+				padding: 75px 0;
+				margin: auto;
+			}
 			.content {
 				width: 700px;
 				padding: 50px;
 				margin: auto;
 			}
+			.notes {
+				padding: 7px;
+			}
+			.notes h6 {
+				color: #666;
+				line-height: 1.3;
+				font-weight: 400;
+				margin-bottom: 0;
+			}
 			@media (max-width: 713px) {
+				.top {
+					width: auto;
+					padding-top: 0;
+					margin: 0;
+				}
 				.content {
 					width: 100%;
 				}
@@ -146,5 +165,5 @@ html(lang="en")
 		
 		//- bootstrap scripts
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous")
-		script(src="dist/jquery.jSlider.min.js")
+		script(src="jquery.jSlider.min.js")
 		block bottom-script

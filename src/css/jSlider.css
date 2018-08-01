@@ -1,7 +1,13 @@
-/**********************************************
-SLIDER CORE!!! DO NOT MODIFY!!!
-//
-**********************************************/
+/*!
+* @jSlider - a jQuery Plugin
+* @version 1.0.1
+*
+* @author Thuy Nguyen ducthuy@gmail.com
+* @website http://startjs.com/
+* @github https://github.com/copthuy/jSlider
+* MIT License
+* Copyright (c) 2018 Thuy Nguyen
+*/
 
 .jSlider {
 	position: relative;

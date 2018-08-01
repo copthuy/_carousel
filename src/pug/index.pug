@@ -4,12 +4,6 @@ block variables
 
 block css
 	style(type="text/css").
-		#top {
-			width: 714px;
-			padding: 75px 0;
-			margin: auto;
-		}
-		
 		#slider1 {
 			width: 100%;
 			height: 394px;
@@ -21,11 +15,6 @@ block css
 		
 		/* responsive rules */
 		@media (max-width: 713px) {
-			#top {
-				width: auto;
-				padding-top: 0;
-				margin: 0;
-			}
 			#slider1 {
 				width: 100%;
 				height: auto; /* reset slider height to automatically fix with the first image height. */
@@ -37,7 +26,7 @@ block css
 		}
 
 block content
-	#top
+	.top
 		#slider1.jSlider
 			- var val = 0
 			while val++ < 6

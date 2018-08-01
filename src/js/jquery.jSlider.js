@@ -6,7 +6,7 @@
 * @website http://startjs.com/
 * @github https://github.com/copthuy/jSlider
 * MIT License
-* Copyright (c) 2015 Thuy Nguyen
+* Copyright (c) 2018 Thuy Nguyen
 */
 
 (function(factory) {

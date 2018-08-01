@@ -3,20 +3,11 @@ block variables
 
 block css
 	style(type="text/css").
-		#top {
-			width: 714px;
-			padding: 75px 0 0 0;
-			margin: auto;
+		.top {
+			padding-bottom: 0;
 		}
 		.notes {
-			padding: 7px;
 			float: right;
-		}
-		.notes h6 {
-			color: #666;
-			line-height: 1.3;
-			font-weight: 400;
-			margin-bottom: 0;
 		}
 		#slider1 {
 			width: 100%;
@@ -27,7 +18,6 @@ block css
 			border-radius: 5px;
 		}
 		
-		#slider1 {}
 		#slider1 h3
 		, #slider1 h4
 		, #slider1 h5
@@ -70,10 +60,6 @@ block css
 		
 		/* responsive rules */
 		@media (max-width: 713px) {
-			#medum-content {
-				width: auto;
-				margin: 0;
-			}
 			#slider1 {
 				width: 100%;
 				height: auto; /* reset slider height to automatically fix with the first image height. */
@@ -87,7 +73,7 @@ block css
 		}
 
 block content
-	#top
+	.top
 		#slider1.jSlider(data-delay="0")
 			div: img(src="images/photo1.jpg" alt="sample photo")
 			.selected

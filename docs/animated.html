@@ -11,7 +11,7 @@
 		<meta name="theme-color" content="#225aa5">
 		<meta name="theme-color" content="#66cc00">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-		<link rel="stylesheet" href="dist/jSlider.css">
+		<link rel="stylesheet" href="jSlider.min.css">
 		<style type="text/css">
 			body {
 				font: normal normal 300 16px/24px 'Open Sans', sans-serif;
@@ -49,12 +49,31 @@
 			strong {
 				font-weight: 400;
 			}
+			.top {
+				width: 714px;
+				padding: 75px 0;
+				margin: auto;
+			}
 			.content {
 				width: 700px;
 				padding: 50px;
 				margin: auto;
 			}
+			.notes {
+				padding: 7px;
+			}
+			.notes h6 {
+				color: #666;
+				line-height: 1.3;
+				font-weight: 400;
+				margin-bottom: 0;
+			}
 			@media (max-width: 713px) {
+				.top {
+					width: auto;
+					padding-top: 0;
+					margin: 0;
+				}
 				.content {
 					width: 100%;
 				}
@@ -62,35 +81,11 @@
 			
 		</style>
 		<style type="text/css">
-			#top {
-				width: 714px;
-				padding: 75px 0;
-				margin: auto;
+			.top {
+				padding-bottom: 0;
 			}
-			.interaction {
-				width: 100%;
-				padding: 50px 50px 0 50px;
-				overflow: hidden;
-			}
-			.interaction > div {
-				width: 48%;
+			.notes {
 				float: right;
-			}
-			.interaction > div:first-child {
-				float: left;
-			}
-			.events div {
-				border: 1px solid #ccc;
-				padding: 10px;
-				height: 150px;
-				overflow: auto;
-			}
-			.events p {
-				font-size: 9px;
-				line-height: 13px;
-				background: #333;
-				margin: 0 0 1px 0;
-				padding: 0 5px;
 			}
 			#slider1 {
 				width: 100%;
@@ -101,12 +96,48 @@
 				border-radius: 5px;
 			}
 			
+			#slider1 h3
+			, #slider1 h4
+			, #slider1 h5
+			, #slider1 p {
+				margin: 0;
+				padding: 5px 10px;
+				color: #fff;
+				background: #000;
+				background: rgba(255, 255, 255, 0.2);
+				position: absolute;
+				left: 5%;
+				z-index: 1;
+			}
+			#slider1 h3 {
+				font-size: 1.75em;
+				line-height: 1;
+				top: 20px;
+			}
+			#slider1 h4 {	
+				font-size: 1em;
+				line-height: 1;
+				top: 63px;
+			}
+			#slider1 p {
+				font-size: 1em;
+				line-height: 1;
+				top: 110px;
+			}
+			#slider1 p + p {
+				top: 140px;
+			}
+			#slider1 h5 {
+				font-size: 1em;
+				line-height: 1;
+				font-weight: normal;
+				font-style: italic;
+				margin-left: 150px;
+				top: 180px;
+			}
+			
 			/* responsive rules */
 			@media (max-width: 713px) {
-				#top {
-					width: auto;
-					margin: 0;
-				}
 				#slider1 {
 					width: 100%;
 					height: auto; /* reset slider height to automatically fix with the first image height. */
@@ -114,35 +145,30 @@
 					margin-top: 0;
 					border-radius: 0;
 				}
+				.notes {
+					float: none;
+				}
 			}
 			
 		</style>
 	</head>
 	<body>
-		<div id="top">
-			<div class="jSlider" id="slider1">
-				<div><img src="images/photo2.jpg" alt="sample photo"></div>
-				<div><img src="images/photo3.jpg" alt="sample photo"></div>
-				<div><img src="images/photo4.jpg" alt="sample photo"></div>
-				<div><img src="images/photo5.jpg" alt="sample photo"></div>
-				<div><img src="images/photo6.jpg" alt="sample photo"></div>
+		<div class="top">
+			<div class="jSlider" id="slider1" data-delay="0">
 				<div><img src="images/photo1.jpg" alt="sample photo"></div>
-				<div><img src="images/photo2.jpg" alt="sample photo"></div>
+				<div class="selected">
+					<h3 class="appear-top">This is the slide title!</h3>
+					<h4 class="appear-right">This can be moved after the slide is showed...</h4>
+					<p class="appear-left">...in different directions...</p>
+					<p class="appear-bottom">...and with different animation effects</p>
+					<h5 class="appear-fade">powered by jSlider!</h5><img src="images/photo2.jpg" alt="sample photo">
+				</div>
+				<div><img src="images/photo4.jpg"></div>
+				<div><img src="images/photo5.jpg"></div>
+				<div><img src="images/photo6.jpg"></div>
 			</div>
-			<div class="interaction">
-				<div class="events">
-					<h4>Event log</h4>
-					<div></div>
-				</div>
-				<div class="ext-controls">
-					<h4>External control</h4>
-					<ul>
-						<li><a class="stop" href="#">Cancel autoplay!</a></li>
-						<li><a class="prev" href="#">Go to previous slide</a></li>
-						<li><a class="next" href="#">Go to next slide</a></li>
-						<li><a class="go3" href="#">Go to slide #3 (index: 2)<br><em>(the first slide index is 0.)</em></a></li>
-					</ul>
-				</div>
+			<div class="notes">
+				<h6>Animated content is on slider #2.<br>Slider #2 is activated at the begining.<br>Auto play is disabled.</h6>
 			</div>
 		</div>
 		<div class="content">
@@ -163,57 +189,6 @@
 			<p>All the photos of the <strong>jSlider </strong>demos / examples are copyrighted to the author of <strong>jSlider. </strong>You are not permit to use them anywhere else.</p>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-		<script src="dist/jquery.jSlider.min.js"></script>
-		<script>
-			(function($) {
-				$('#slider1').on({
-					
-					/* fired when the slider is initialized successfully! */
-					'slideCreated': function() {
-						$('<p>Slider is created!</p>').appendTo('.events div');
-						
-						/* Stop autoplay */
-						$('.stop').on('click', function(evt) {
-							evt.preventDefault();
-							$('#slider1').sliderStop();
-						});
-						
-						/* Stop autoplay & go to previous slide */
-						$('.prev').on('click', function(evt) {
-							evt.preventDefault();
-							$('#slider1').sliderStop().sliderGo(-1);
-						});
-						
-						/* Stop autoplay & go to next slide */
-						$('.next').on('click', function(evt) {
-							evt.preventDefault();
-							$('#slider1').sliderStop().sliderGo(1);
-						});
-						
-						/* Stop autoplay & go to slide #3 */
-						$('.go3').on('click', function(evt) {
-							evt.preventDefault();
-							$('#slider1').sliderStop().sliderUpdate(2);
-						});
-					}
-			
-					/* fired when starting moving to another slide */
-					, 'slideStart': function() {
-						$('<p>Start sliding</p>').appendTo('.events div');
-					}
-			
-			
-					/* fired when finish moving to another slide, return the current slide index */
-					, 'slideComplete': function(evt) {
-						$('<p>Slided to slide #' + ( evt.current + 1 ) + '</p>').appendTo('.events div');
-					}
-			
-					/* fired when autoplay is canceled */
-					, 'slideCancelAutoPlay': function(evt) {
-						$('<p>Autoplay has been canceled!</p>').appendTo('.events div');
-					}
-				});
-			})(jQuery);
-		</script>
+		<script src="jquery.jSlider.min.js"></script>
 	</body>
 </html>
