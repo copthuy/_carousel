@@ -10,7 +10,7 @@ jSlider is an advanced jQuery Slider Plugin which help you to embed a full featu
 - It supports animated content. (5 different animations)
 
 # Demos & Examples
-[https://copthuy.github.io/jSlider/index.html](https://copthuy.github.io/jSlider/index.html)
+[https://copthuy.github.io/jSlider](https://copthuy.github.io/jSlider)
 
 # Change Log
 - v1.0.0 - The first release.
