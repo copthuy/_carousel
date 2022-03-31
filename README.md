@@ -1,13 +1,13 @@
-# _carousel 🎠
+### _carousel 🎠
 My own carousel for my project. Visit the demo link for more details.
 
-# Demos & Examples ❤️
+### Demos & Examples ❤️
 [https://copthuy.github.io/_carousel](https://copthuy.github.io/_carousel)
 
-# Change Log for v2 🆕
+### Change Log for v2 🆕
 - Rename from jSlder to _carousel
 - Remove jQuery
 - Add more transitions
 
-# License 🪴
+### License 🪴
 (MIT License) — Copyright © Thuy Nguyen
