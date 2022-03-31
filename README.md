@@ -1,5 +1,5 @@
 ### _carousel 🎠
-My own carousel for my project. Visit the demo link for more details.
+My own carousel for my projects. Visit the demo link for more details.
 
 ### Demos & Examples ❤️
 [https://copthuy.github.io/_carousel](https://copthuy.github.io/_carousel)
