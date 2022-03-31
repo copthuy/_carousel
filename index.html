@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>_carousel</title>
+	<meta name="description" content="_carousel example">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/page.css">
+	<link rel="stylesheet" href="./css/atom-one-dark.min.css">
+	<link rel="stylesheet" href="./css/_carousel.css">
+</head>
+
+<body>
+	<header>
+		<h1><span>_</span>carousel</h1>
+	</header>
+	<main>
+		<div id="exampleCarousel" class="_carousel" data-delay="-1">
+			<div class="_carousel-content">
+				<div id="intro-slide">
+					<h2>Welcome to <strong>_carousel</strong>!</h2>
+					<p><strong>_carousel</strong> helps you to add slideshow to your web page for cycling through images, text, or custom markup. You can find some good features below:</p>
+					<ul>
+						<li>It's easy to integrate into your page</li>
+						<li>It has 4 built in animations</li>
+						<li>It supports touch devices</li>
+						<li>It supports mouse drag interaction</li>
+						<li>It's super light weight</li>
+						<li>It's written in vanilla javascript (ES6 and CSS only)</li>
+					</ul>
+				</div>
+				<div id="video-slide">
+					<h2>This video is played automatically when the slide is showed up</h2>
+					<video tabindex="-1" loop>
+						<source src="./images/pexels-rostislav-uzunov-7385122.mp4" type="video/mp4">
+					</video>
+				</div>
+				<img src="./images/sample3.svg">
+				<img src="./images/sample4.svg">
+				<img src="./images/sample5.svg">
+				<img src="./images/sample6.svg">
+				<img src="./images/sample7.svg">
+			</div>
+		</div>
+
+		<section>
+			<article>
+				<h2>Getting started</h2>
+				<h3>Add css link to document head</h3>
+				<pre><code class="language-html">&lt;link rel="stylesheet" href="./css/_carousel.css"&gt;</code></pre>
+				<h3>Add code to document body</h3>
+				<p>Make sure the class name <strong>_carousel-content</strong> is there. The top <strong>_carousel</strong> class is to initialize the carousel automatically.</p>
+				<pre><code class="language-html">&lt;div class="_carousel"&gt;
+	&lt;div class="_carousel-content"&gt;
+		&lt;div class="selected"&gt;
+		...
+		&lt;/div&gt;
+		&lt;img src="..." alt="..."&gt;
+		&lt;div&gt;...&lt;/div&gt;
+		...
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				<p><em>*** If you DO NOT specify <strong>class="_carousel"</strong>, you will need to initialize the carousel manually. By this, you will have <strong>init</strong> event.</em></p>
+				<pre><code class="language-html">&lt;div id="exampleCarousel"&gt;
+	...
+&lt;/div&gt;
+...
+&lt;script src="./js/_carousel.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+	...
+	let elem = document.querySelector('#exampleCarousel');
+	if (elem) {
+		elem.addEventListener('init', evt => {
+			console.log(evt);
+			//your code here
+		});
+		new _carousel(elem);
+	}
+&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+				<h3>Add javascript code before the closing body tab</h3>
+				<pre><code class="language-html">...
+	&lt;script src="./js/_carousel.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+			</article>
+			<article>
+				<h2>Change first selected slide</h2>
+				<p>At the beginning, the first child node in <strong>_carousel-content</strong> is selected and showed up. You can try to set the first slide to any item you want by adding class <strong>selected</strong>.</p>
+				<pre><code class="language-html">&lt;div class="... selected"&gt;...</code></pre>
+			</article>
+			<article>
+				<h2>Hide controls and indicators</h2>
+				<p>You can hide the control buttons or indicators by adding <strong>data-controls</strong> and <strong>data-indicators</strong> to the main carousel tag. You can set it to <strong>0/false/no/off/null</strong> to hide them.</p>
+				<pre><code class="language-html">&lt;div class="_carousel" data-controls="no" data-indicators="false"&gt;...</code></pre>
+			</article>
+			<article>
+				<h2>Change transition</h2>
+				<p>By default, the transition between items is <strong>slide</strong> horizontally. You can try other transitions by adding <strong>fade</strong>, <strong>parallax</strong> or <strong>no-transition</strong> class to the main carousel tag.</p>
+				<pre><code class="language-html">&lt;div class="_carousel fade"&gt;...</code></pre>
+			</article>
+			<article>
+				<h2>Change delay time</h2>
+				<p>You can change the delay time of autoplay by adding <strong>data-delay="&lt;number in ms&gt;"</strong> to the main carousel tag. Remember the number must be greater than 1000ms or else the autoplay is turn off (you can turn off the autoplay by setting the delay time less than 1000ms).</p>
+				<pre><code class="language-html">&lt;div class="_carousel" data-delay="7000"&gt;...</code></pre>
+			</article>
+			<article>
+				<h2>Events</h2>
+				<p>You can listen to events fired by the carousel from the main tag. Supported events are <strong>init</strong> (available when you create the carousel manually), <strong>before-transition</strong>, <strong>transition-end</strong>, <strong>drag-start</strong>, <strong>drag-move</strong> and <strong>drag-end</strong></p>
+				<pre><code class="language-js">let elem = document.querySelector('#exampleCarousel');
+if (elem) {
+	elem.addEventListener('init', evt => {
+		console.log(evt);
+		//your code here
+	});
+	elem.addEventListener('before-transition', evt => {
+		//your code here
+	});
+	elem.addEventListener('transition-end', evt => {
+		console.log(evt.detail); // show the current slide index
+		//your code here
+	});
+	//...
+	new _carousel(elem);
+}</code></pre>
+			</article>
+		</section>
+	</main>
+	
+	<footer>
+		<div>*Demo vector graphics and videos from <a href="https://pexels.com/" target="_blank" rel="nofollow">pexels</a>, <a href="https://pixabay.com/" target="_blank" rel="nofollow">pixabay</a> &amp; <a href="https://loading.io/" target="_blank" rel="nofollow">loading.io</a></div>
+	</footer>
+
+	<script src="./js/_carousel.js"></script>
+	<script src="./js/highlight.min.js"></script>
+	<script>
+		hljs.highlightAll();
+
+		let elem = document.querySelector('#exampleCarousel');
+		if (elem) {
+			elem.addEventListener('init', evt => {
+				console.log(evt);
+			});
+			elem.addEventListener('before-transition', evt => {
+				//console.log(evt);
+			});
+			elem.addEventListener('transition-end', evt => {
+				console.log(evt.detail);
+			});
+		}
+		//new _carousel(elem);
+	</script>
+</body>
+
+</html>
